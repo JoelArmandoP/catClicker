@@ -38,13 +38,11 @@ cats.displayList = function() {
 
 function displayCatFctn(cat) {
 	return function() {
-		$('#catSelected').html(
-		HTMLcat.
-		replace(/%name%/g, cat.name).
-		replace(/%image%/g, '<img id="cat-image" src="' + cat.image + '">').
-		replace(/%clicks%/g, '<span id="cat-clicks">' + cat.clicks + "</span>")
-		);
-		document.getElementById('cat-image').addEventListener('click', addClickFctn(cat, document.getElementById('cat-clicks')));
+		$('#cat-name').text(cat.name);
+		$('#cat-image').attr('src', cat.image);
+		$('#cat-image').off('click');
+		$('#cat-image').click(addClickFctn(cat, $('#cat-clicks')));
+		$('#cat-clicks').text(cat.clicks);
 	}
 }
 
@@ -52,7 +50,7 @@ function displayCatFctn(cat) {
 function addClickFctn(cat, clickDisplay) {
 	return function() {
     	cat.clicks++;
-	    clickDisplay.innerHTML = cat.clicks;
+	    clickDisplay.text(cat.clicks);
 	}
 }
 
