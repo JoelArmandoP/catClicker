@@ -29,7 +29,19 @@
                 <div class="cat-img-div"><img class="cat-image" id="cat-image" src=""></div>
                 <div id="cat-clicks" class="clicks">Cat clicks</div>
                 <button type="button" id="show-admin-button" value="Admin">Admin</button>
-                <form display="none" id="admin-form" class="admin-form"></form>
+                <div id="adminForm" style="display:none">
+                    <form id="admin-form" class="admin-form">
+                        Cat name:<br>
+                        <input type="text" name="cat-name-field">
+                        <br>
+                        Cat image:<br>
+                        <input type="text" name="cat-image-url-field">
+                        <br>
+                        Cat clicks:<br>
+                        <input type="number" name="cat-clicks-field">
+                        <button type="button" id="save-button" value="save">save</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
