@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="css/bootstrap/js/jquery-1.11.3.min.js"></script>
     <script src="css/bootstrap/js/bootstrap.min.js"></script>
     <title>Cat clicker</title>
+    <link rel="stylesheet" href="css/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="container">
-    <header>
         <div class="row">
             <div class="col-md-12">
-            <h1 id="title" class="title">Click on your favourite cat</h1>
-            <ul id="cat-list">
-            </ul>
+                <h1 id="title" class="title">Click on your favourite cat</h1>
             </div>
         </div>
-    </header>
-    <div class="row">
-        <div class="col-md-6">
-        <ul id='cats'>
-        </ul>
-        </div>
-        <div class="col-md-6">
-            <div id="cat-name" class="cat-name"></div>
-            <div class="img"><img id="cat-image" src=""></div>
-            <div id="cat-clicks" class="clicks"></div>
+        <div class="row">
+            <div class="col-md-4">
+                <ul id="cat-list">
+                    <li>One cat</li>
+                    <li>Another cat</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <div id="cat-name" class="cat-name">Cat name</div>
+                <div class="cat-img-div"><img class="cat-image" id="cat-image" src=""></div>
+                <div id="cat-clicks" class="clicks">Cat clicks</div>
+                <button type="button" id="show-admin-button" value="Admin">Admin</button>
+                <form display="none" id="admin-form" class="admin-form"></form>
+            </div>
         </div>
     </div>
     <script src="js/main.js"></script>

@@ -1,5 +1,4 @@
-* {box-sizing:border-box;}
-body {background-color: #CCC;}
+/* * {box-sizing:border-box;} */
 
 .title {
     color:black;
@@ -7,6 +6,14 @@ body {background-color: #CCC;}
     text-align: center;
 }
 
-.img {
+.container {
+        max-width: 1024px;
+}
+
+.cat-image-div {
     align: center;
+}
+
+.cat-image {
+    width: 200px;
 }
