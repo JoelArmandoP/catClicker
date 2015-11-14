@@ -33,6 +33,10 @@ var catView = {
 		catView.catNameField = $('#cat-name-field');
 		catView.catClicksField = $('#cat-clicks-field');
 		catView.catImgUrlField = $('#cat-image-url-field');
+		catView.adminFormDiv = $('#admin-form-div');
+		$('#show-admin-button').click(function() {
+			catView.adminFormDiv.show();
+		});
 	},
 	render: function(cat) {
 		catView.catName.text(cat.name);
