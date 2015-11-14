@@ -56,7 +56,10 @@ var catView = {
 					catView.catImgUrlField.val(), catView.catClicksField.val());
 			}
 			catView.adminFormDiv.hide();
-		})
+		});
+		$('#cancel-button').click(function() {
+			catView.adminFormDiv.hide();
+		});
 	},
 	render: function(cat) {
 		catView.catName.text(cat.name);
