@@ -6,6 +6,18 @@ function cat(name, image) {
     this.clicks = 0;
 };
 
+cat.prototype.setName = function (name) {
+	this.name = name;
+}
+
+cat.prototype.setImage = function (image) {
+	this.image = image;
+}
+
+cat.prototype.setClicks = function (clicks) {
+	this.clicks = clicks;
+}
+
 var model = {
 	init: function() {
 		model.cats = [];
@@ -41,7 +53,7 @@ var catView = {
 		$('#save-button').click(function() {
 			if (catView.onUpdateCallback) {
 				catView.onUpdateCallback(catView.catNameField.val(),
-					catView.catClicksField.val(), catView.catImgUrlField.val());
+					catView.catImgUrlField.val(), catView.catClicksField.val());
 			}
 			catView.adminFormDiv.hide();
 		})
@@ -113,6 +125,7 @@ var octopus = {
 		catView.onLike(octopus.likeCat);
 		octopus.selectedCat = model.getCat(0);
 		catView.render(octopus.selectedCat);
+		catView.onUpdate(octopus.updateCat);
 	},
 	likeCat: function () {
 		octopus.selectedCat.clicks++;
@@ -121,7 +134,14 @@ var octopus = {
 	selectCat: function(cat) {
 		octopus.selectedCat = cat;
 		catView.render(cat);
+	},
+	updateCat: function(catName, catImage, catClicks) {
+		octopus.selectedCat.setName(catName);
+		octopus.selectedCat.setImage(catImage);
+		octopus.selectedCat.setClicks(catClicks);
+		catView.render(octopus.selectedCat);
 	}
+
 };
 
 octopus.init();
