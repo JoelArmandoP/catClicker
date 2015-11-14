@@ -37,6 +37,14 @@ var catView = {
 		$('#show-admin-button').click(function() {
 			catView.adminFormDiv.show();
 		});
+		catView.onUpdateCallback = null;
+		$('#save-button').click(function() {
+			if (catView.onUpdateCallback) {
+				catView.onUpdateCallback(catView.catNameField.val(),
+					catView.catClicksField.val(), catView.catImgUrlField.val());
+			}
+			catView.adminFormDiv.hide();
+		})
 	},
 	render: function(cat) {
 		catView.catName.text(cat.name);
@@ -51,6 +59,11 @@ var catView = {
 	onLike: function(callback) {
 		catView.catImage.off('click');
 		catView.catImage.click(callback);
+	},
+	/* callback: f(name, url, clicks)
+	*/
+	onUpdate: function(callback) {
+		catView.onUpdateCallback = callback;
 	}
 };
 
