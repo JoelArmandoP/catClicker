@@ -30,11 +30,17 @@ var catView = {
 		catView.catName = $('#cat-name');
 		catView.catImage = $('#cat-image');
 		catView.catClicks = $('#cat-clicks');
+		catView.catNameField = $('#cat-name-field');
+		catView.catClicksField = $('#cat-clicks-field');
+		catView.catImgUrlField = $('#cat-image-url-field');
 	},
 	render: function(cat) {
 		catView.catName.text(cat.name);
 		catView.catImage.attr('src', cat.image);
 		catView.catClicks.text(cat.clicks);
+		catView.catNameField.val(cat.name);
+		catView.catClicksField.val(cat.clicks);
+		catView.catImgUrlField.val(cat.image);
 	},
 	/* callback: f()
 	*/
